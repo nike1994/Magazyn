@@ -28,15 +28,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="DataBase">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/Igui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/DBConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/DBConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/IDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/IDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/ProductInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/ProductInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dbFiles/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dbFiles/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dbFiles/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dbFiles/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DBConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DBConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/IDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/IDataBase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,13 +98,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,6 +128,7 @@
       <workItem from="1604870859715" duration="1167000" />
       <workItem from="1605210000668" duration="9115000" />
       <workItem from="1605296166861" duration="5217000" />
+      <workItem from="1605302694430" duration="6311000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1604870928621</created>
@@ -199,22 +204,22 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1604871141351" />
-    <state width="1637" height="272" key="GridCell.Tab.0.bottom" timestamp="1605301378666">
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom" timestamp="1605308972290">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605301378666" />
-    <state width="1637" height="272" key="GridCell.Tab.0.center" timestamp="1605301378665">
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605308972290" />
+    <state width="1637" height="272" key="GridCell.Tab.0.center" timestamp="1605308972290">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.center/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605301378665" />
-    <state width="1637" height="272" key="GridCell.Tab.0.left" timestamp="1605301378665">
+    <state width="1637" height="272" key="GridCell.Tab.0.center/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605308972290" />
+    <state width="1637" height="272" key="GridCell.Tab.0.left" timestamp="1605308972290">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.left/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605301378665" />
-    <state width="1637" height="272" key="GridCell.Tab.0.right" timestamp="1605301378665">
+    <state width="1637" height="272" key="GridCell.Tab.0.left/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605308972290" />
+    <state width="1637" height="272" key="GridCell.Tab.0.right" timestamp="1605308972290">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.right/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605301378665" />
+    <state width="1637" height="272" key="GridCell.Tab.0.right/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605308972290" />
     <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1605298175175">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

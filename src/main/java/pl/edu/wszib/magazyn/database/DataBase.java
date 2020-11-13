@@ -77,8 +77,6 @@ public class DataBase implements IDataBase{
     public boolean add(String EAN, int quantity) {
         int oldQuantity = jsonDB.findById(EAN,ProductInstance.class).getQuantity();
         updateProduct("quantity", oldQuantity+quantity, EAN);
-
-        System.out.println("add");
         return false;
     }
 

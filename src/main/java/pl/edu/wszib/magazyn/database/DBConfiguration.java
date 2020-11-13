@@ -6,6 +6,7 @@ import io.jsondb.crypto.ICipher;
 import org.springframework.stereotype.Component;
 
 import java.security.GeneralSecurityException;
+import java.util.logging.Logger;
 
 public class DBConfiguration {
     //Actual location on disk for database files, process should have read-write permissions to this folder

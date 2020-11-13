@@ -1,5 +1,5 @@
 {"schemaVersion":"1.0"}
-{"name":"klawiatura","quantity":90,"privateKey":"5hukcb4F9etYhiW7JnG7nxKRj53OcT4imE+q1D0mbKd572J564QHBJ3Iq770eDn0CWl508xj+jNJSbmrnx7AXmncAPI=","ean":"3039532524879"}
-{"name":"myszka","quantity":89,"privateKey":"VZxrrGj8msL1J3nqNaEqOmzrJ3WuapoQb7e3Kn/cZoYdk5cMDjLjaL91SheRrb2EPKLLgICiwbJXksbHtP7U/KbntJw=","ean":"4637347673403"}
-{"name":"procesor","quantity":91,"privateKey":"GtLnUuaTnVaT/RBakqJgoWzqdFbZcEOrToemGjSA3UqWRd9xCUIaCEquXJ1yfXnmnymnTlMg3lwOvO9SfQ1yMK4k6f0=","ean":"9530185053555"}
-{"name":"monitor","quantity":55,"privateKey":"/5nstpcHWOd5sH8fBxMVxo+7Vz/2H/TiETUAJ/qE8TIHZyTxJiwKj09CilEdKrkssAaCLBiNcF4M0c/Y1WWOgMo3RFU=","ean":"1644941230249"}
+{"name":"klawiatura","quantity":46,"privateKey":"5hukcb4F9etYhiW7JnG7nxKRj53OcT4imE+q1D0mbKd572J564QHBJ3Iq770eDn0CWl508xj+jNJSbmrnx7AXmncAPI=","ean":"3039532524879"}
+{"name":"myszka","quantity":96,"privateKey":"VZxrrGj8msL1J3nqNaEqOmzrJ3WuapoQb7e3Kn/cZoYdk5cMDjLjaL91SheRrb2EPKLLgICiwbJXksbHtP7U/KbntJw=","ean":"4637347673403"}
+{"name":"procesor","quantity":25,"privateKey":"GtLnUuaTnVaT/RBakqJgoWzqdFbZcEOrToemGjSA3UqWRd9xCUIaCEquXJ1yfXnmnymnTlMg3lwOvO9SfQ1yMK4k6f0=","ean":"9530185053555"}
+{"name":"monitor","quantity":61,"privateKey":"/5nstpcHWOd5sH8fBxMVxo+7Vz/2H/TiETUAJ/qE8TIHZyTxJiwKj09CilEdKrkssAaCLBiNcF4M0c/Y1WWOgMo3RFU=","ean":"1644941230249"}
