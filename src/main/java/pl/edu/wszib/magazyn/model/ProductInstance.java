@@ -1,9 +1,11 @@
-package pl.edu.wszib.magazyn.database;
+package pl.edu.wszib.magazyn.model;
 
 import io.jsondb.annotation.Document;
 import io.jsondb.annotation.Id;
 import io.jsondb.annotation.Secret;
+import org.springframework.stereotype.Component;
 
+@Component
 @Document(collection = "products", schemaVersion= "1.0")
 public class ProductInstance {
     @Id

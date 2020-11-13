@@ -3,9 +3,8 @@ package pl.edu.wszib.magazyn.database;
 import io.jsondb.JsonDBTemplate;
 import io.jsondb.query.Update;
 import org.springframework.stereotype.Component;
+import pl.edu.wszib.magazyn.model.ProductInstance;
 
-import javax.xml.crypto.Data;
-import java.lang.reflect.Array;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.List;
@@ -20,12 +19,12 @@ public class DataBase implements IDataBase{
         try {
 
             DBConfiguration dbConf = new DBConfiguration();
-            this.jsonDB = dbConf.initialization();
+            jsonDB = dbConf.initialization();
 
-            Set<String> collections = this.jsonDB.getCollectionNames();
+            Set<String> collections = jsonDB.getCollectionNames();
 
             if(!collections.contains("products")){
-                this.jsonDB.createCollection(ProductInstance.class);
+                jsonDB.createCollection(ProductInstance.class);
                 DBFilling();
             }
 
@@ -42,9 +41,10 @@ public class DataBase implements IDataBase{
         product.setQuantity(quantity);
         product.setPrivateKey(key);
 
-        this.jsonDB.insert(product);
+        jsonDB.insert(product);
 
     }
+
 
     private void DBFilling(){
         List<String> productsNames = Arrays.asList("klawiatura","myszka","procesor","monitor");
@@ -60,29 +60,38 @@ public class DataBase implements IDataBase{
 
     }
 
-    @Override
-    public boolean add(String EAN, int quantity) {
 
+    private void updateProduct(String key, Object value, String EAN){
         Update up = new Update();
-        up.set("quantity", quantity);
+        up.set(key, value);
 
         //wielość liter ma znaczenie
         String jxQuery = String.format("/.[EAN='%s']",EAN);
 
-        this.jsonDB.findAndModify(jxQuery,up,ProductInstance.class);
+        jsonDB.findAndModify(jxQuery,up,ProductInstance.class);
+    }
 
+
+    @Override
+    public boolean add(String EAN, int quantity) {
+        int oldQuantity = jsonDB.findById(EAN,ProductInstance.class).getQuantity();
+        updateProduct("quantity", oldQuantity+quantity, EAN);
 
         System.out.println("add");
         return false;
     }
 
+
     @Override
     public boolean remove(String EAN, int quantity) {
+        int oldQuantity = jsonDB.findById(EAN,ProductInstance.class).getQuantity();
+        updateProduct("quantity", oldQuantity-quantity, EAN);
         return false;
     }
 
+
     @Override
-    public boolean selectAll() {
-        return false;
+    public List<ProductInstance> selectAll() {
+        return jsonDB.findAll(ProductInstance.class);
     }
 }
