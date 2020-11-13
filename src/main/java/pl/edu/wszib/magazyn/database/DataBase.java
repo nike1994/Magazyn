@@ -2,6 +2,7 @@ package pl.edu.wszib.magazyn.database;
 
 import io.jsondb.JsonDBTemplate;
 import io.jsondb.query.Update;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.edu.wszib.magazyn.model.ProductInstance;
 
@@ -91,7 +92,7 @@ public class DataBase implements IDataBase{
 
 
     @Override
-    public List<ProductInstance> selectAll() {
+    public List<ProductInstance> getAll() {
         return jsonDB.findAll(ProductInstance.class);
     }
 }

@@ -1,15 +1,13 @@
 package pl.edu.wszib.magazyn;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.edu.wszib.magazyn.database.DataBase;
+import pl.edu.wszib.magazyn.database.IDataBase;
+import pl.edu.wszib.magazyn.gui.GUI;
 
 public class App {
-    public static void main(String[] args) {
-
-        DataBase db = new DataBase();
-        System.out.println(db.selectAll().get(0).getQuantity());
-        db.add("3039532524879", 20);
-        System.out.println(db.selectAll().get(0).getQuantity());
-        db.remove("3039532524879", 5);
-        System.out.println(db.selectAll().get(0).getQuantity());
+    public static void main(String[] args) { 
+        new AnnotationConfigApplicationContext(ApplicationContext.class).getBean(GUI.class).showMainMenu();
     }
 }

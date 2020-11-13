@@ -7,5 +7,5 @@ import java.util.List;
 public interface IDataBase {
     boolean add(String EAN, int quantity);
     boolean remove(String EAN, int quantity);
-    List<ProductInstance> selectAll();
+    List<ProductInstance> getAll();
 }

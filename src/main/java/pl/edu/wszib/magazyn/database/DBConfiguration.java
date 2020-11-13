@@ -3,6 +3,7 @@ package pl.edu.wszib.magazyn.database;
 import io.jsondb.JsonDBTemplate;
 import io.jsondb.crypto.Default1Cipher;
 import io.jsondb.crypto.ICipher;
+import org.springframework.stereotype.Component;
 
 import java.security.GeneralSecurityException;
 
