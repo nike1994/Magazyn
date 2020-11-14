@@ -44,11 +44,16 @@ public class GUI implements Igui {
         System.out.println("EAN:");
         return scanner.nextLine();
     }
+
+    private String getName(){
+        System.out.println("Name:");
+        return scanner.nextLine();
+    }
     
     private void increaseQuantity(){
         try{
             if (db.add(getEAN(),getQuantity())){
-                System.out.println("Successful compleated");
+                System.out.println("Successful completed");
             }else{
                 System.out.println("Wrong data");
             }
@@ -61,11 +66,28 @@ public class GUI implements Igui {
     private void reduceQuantity(){
         try {
             if (db.remove(getEAN(),getQuantity())){
-                System.out.println("Successful compleated");
+                System.out.println("Successful completed");
             }else{
                 System.out.println("Wrong data");
             }
         }catch (InputMismatchException e){
+            System.out.println("Wrong data");
+
+        }
+
+        System.out.println();
+    }
+
+    private void addProduct(){
+        try {
+            if (db.createProduct(getEAN(),getName(),getQuantity())){
+                System.out.println("Successful completed");
+            }else{
+                System.out.println("1");
+                System.out.println("Wrong data");
+            }
+        }catch (InputMismatchException e){
+            System.out.println("2");
             System.out.println("Wrong data");
 
         }
@@ -79,7 +101,8 @@ public class GUI implements Igui {
         System.out.println("1.Show all products");
         System.out.println("2.increase quantity");
         System.out.println("3.reduce quantity");
-        System.out.println("4.EXIT");
+        System.out.println("4.add new product");
+        System.out.println("5.EXIT");
 
 
         switch (scanner.nextLine()){
@@ -93,9 +116,10 @@ public class GUI implements Igui {
                 this.reduceQuantity();
                 break;
             case "4":
-                System.exit(0);
-            case "":
+                this.addProduct();
                 break;
+            case "5":
+                System.exit(0);
             default:
                 System.out.println("Wrong number");
         }

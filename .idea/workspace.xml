@@ -27,13 +27,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="GUI">
+    <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="Error handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/IDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/IDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dbFiles/products.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dbFiles/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dbFiles/products.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DBConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DBConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DataBase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +122,7 @@
       <workItem from="1605210000668" duration="9115000" />
       <workItem from="1605296166861" duration="5217000" />
       <workItem from="1605302694430" duration="6403000" />
-      <workItem from="1605383169634" duration="4655000" />
+      <workItem from="1605383169634" duration="6966000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1604870928621</created>
@@ -153,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605309097145</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Error handling">
+      <created>1605388012832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605388012832</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +182,8 @@
     <MESSAGE value="Mvn" />
     <MESSAGE value="DataBase" />
     <MESSAGE value="GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI" />
+    <MESSAGE value="Error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error handling" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="79" key="#Project_Structure" timestamp="1605210624071">
@@ -211,26 +218,26 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1604871141351" />
-    <state width="1637" height="272" key="GridCell.Tab.0.bottom" timestamp="1605387430876">
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom" timestamp="1605389738417">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605387430876" />
-    <state width="1637" height="272" key="GridCell.Tab.0.center" timestamp="1605387430876">
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605389738417" />
+    <state width="1637" height="272" key="GridCell.Tab.0.center" timestamp="1605389738417">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.center/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605387430876" />
-    <state width="1637" height="272" key="GridCell.Tab.0.left" timestamp="1605387430876">
+    <state width="1637" height="272" key="GridCell.Tab.0.center/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605389738417" />
+    <state width="1637" height="272" key="GridCell.Tab.0.left" timestamp="1605389738417">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.left/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605387430876" />
-    <state width="1637" height="272" key="GridCell.Tab.0.right" timestamp="1605387430876">
+    <state width="1637" height="272" key="GridCell.Tab.0.left/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605389738417" />
+    <state width="1637" height="272" key="GridCell.Tab.0.right" timestamp="1605389738417">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="272" key="GridCell.Tab.0.right/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605387430876" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1605309115735">
+    <state width="1637" height="272" key="GridCell.Tab.0.right/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605389738417" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1605388028276">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605309115735" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1280.22.1280.984@0.0.1680.1010" timestamp="1605388028276" />
     <state x="378" y="241" width="924" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605386626243">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

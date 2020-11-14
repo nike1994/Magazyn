@@ -35,15 +35,15 @@ public class DataBase implements IDataBase{
 
     }
 
-    private void createProduct(String EAN, String name, int quantity, String key){
-        ProductInstance product = new ProductInstance();
-        product.setEAN(EAN);
-        product.setName(name);
-        product.setQuantity(quantity);
-        product.setPrivateKey(key);
+    private void createProductInstance(String EAN, String name, int quantity, String key){
+        ProductInstance newproduct = new ProductInstance();
 
-        jsonDB.insert(product);
+        newproduct.setEAN(EAN);
+        newproduct.setName(name);
+        newproduct.setQuantity(quantity);
+        newproduct.setPrivateKey(key);
 
+        jsonDB.insert(newproduct);
     }
 
 
@@ -56,7 +56,7 @@ public class DataBase implements IDataBase{
             int quantity = (int) Math.floor(Math.random()*100);
             String key = UUID.randomUUID().toString();
 
-            createProduct(String.valueOf(ean),name,quantity,key);
+            createProductInstance(String.valueOf(ean),name,quantity,key);
         }
 
     }
@@ -81,6 +81,22 @@ public class DataBase implements IDataBase{
         }
     }
 
+    @Override
+    public boolean createProduct(String EAN, String name, int quantity){
+        ProductInstance product = jsonDB.findById(EAN,ProductInstance.class);
+        String key = UUID.randomUUID().toString();
+
+        if(
+           product == null && EAN.matches("[0-9]{13}") &&
+           name != null && !name.isEmpty() &&
+           quantity>=0
+        ){
+            createProductInstance(EAN,name,quantity,key);
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     @Override
     public boolean add(String EAN, int quantity) {
