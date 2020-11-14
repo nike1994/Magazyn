@@ -52,7 +52,7 @@ public class GUI implements Igui {
     
     private void increaseQuantity(){
         try{
-            if (db.add(getEAN(),getQuantity())){
+            if (db.addQuantity(getEAN(),getQuantity())){
                 System.out.println("Successful completed");
             }else{
                 System.out.println("Wrong data");
@@ -65,7 +65,7 @@ public class GUI implements Igui {
     
     private void reduceQuantity(){
         try {
-            if (db.remove(getEAN(),getQuantity())){
+            if (db.removeQuantity(getEAN(),getQuantity())){
                 System.out.println("Successful completed");
             }else{
                 System.out.println("Wrong data");
@@ -83,16 +83,22 @@ public class GUI implements Igui {
             if (db.createProduct(getEAN(),getName(),getQuantity())){
                 System.out.println("Successful completed");
             }else{
-                System.out.println("1");
                 System.out.println("Wrong data");
             }
         }catch (InputMismatchException e){
-            System.out.println("2");
             System.out.println("Wrong data");
 
         }
 
         System.out.println();
+    }
+
+    private void removeProduct(){
+        if (db.removeProduct(getEAN())){
+            System.out.println("Successful completed");
+        }else {
+            System.out.println("Wrong data");
+        }
     }
 
     @Override
@@ -102,7 +108,8 @@ public class GUI implements Igui {
         System.out.println("2.increase quantity");
         System.out.println("3.reduce quantity");
         System.out.println("4.add new product");
-        System.out.println("5.EXIT");
+        System.out.println("5.remove product");
+        System.out.println("6.EXIT");
 
 
         switch (scanner.nextLine()){
@@ -119,6 +126,9 @@ public class GUI implements Igui {
                 this.addProduct();
                 break;
             case "5":
+                this.removeProduct();
+                break;
+            case "6":
                 System.exit(0);
             default:
                 System.out.println("Wrong number");

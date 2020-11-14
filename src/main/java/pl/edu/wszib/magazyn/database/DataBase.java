@@ -82,6 +82,19 @@ public class DataBase implements IDataBase{
     }
 
     @Override
+    public boolean removeProduct(String EAN) {
+        ProductInstance product = jsonDB.findById(EAN,ProductInstance.class);
+
+        if(product!=null){
+            String jxQuery = String.format("/.[EAN='%s']",EAN);
+            jsonDB.findAndRemove(jxQuery, ProductInstance.class);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
     public boolean createProduct(String EAN, String name, int quantity){
         ProductInstance product = jsonDB.findById(EAN,ProductInstance.class);
         String key = UUID.randomUUID().toString();
@@ -99,7 +112,7 @@ public class DataBase implements IDataBase{
     }
 
     @Override
-    public boolean add(String EAN, int quantity) {
+    public boolean addQuantity(String EAN, int quantity) {
         int oldQuantity = getOldQuantity(EAN);
 
         if(oldQuantity>=0 && quantity>=0){
@@ -112,7 +125,7 @@ public class DataBase implements IDataBase{
 
 
     @Override
-    public boolean remove(String EAN, int quantity) {
+    public boolean removeQuantity(String EAN, int quantity) {
         int oldQuantity = getOldQuantity(EAN);
 
         if(oldQuantity>=0 && (quantity>=0 && quantity<oldQuantity)){
