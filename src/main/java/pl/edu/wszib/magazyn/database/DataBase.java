@@ -72,20 +72,39 @@ public class DataBase implements IDataBase{
         jsonDB.findAndModify(jxQuery,up,ProductInstance.class);
     }
 
+    private int getOldQuantity(String EAN){
+        ProductInstance product = jsonDB.findById(EAN,ProductInstance.class);
+        if(product != null){
+            return product.getQuantity();
+        }else{
+            return -1;
+        }
+    }
+
 
     @Override
     public boolean add(String EAN, int quantity) {
-        int oldQuantity = jsonDB.findById(EAN,ProductInstance.class).getQuantity();
-        updateProduct("quantity", oldQuantity+quantity, EAN);
-        return false;
+        int oldQuantity = getOldQuantity(EAN);
+
+        if(oldQuantity>=0 && quantity>=0){
+            updateProduct("quantity", oldQuantity+quantity, EAN);
+            return true;
+        }else {
+            return false;
+        }
     }
 
 
     @Override
     public boolean remove(String EAN, int quantity) {
-        int oldQuantity = jsonDB.findById(EAN,ProductInstance.class).getQuantity();
-        updateProduct("quantity", oldQuantity-quantity, EAN);
-        return false;
+        int oldQuantity = getOldQuantity(EAN);
+
+        if(oldQuantity>=0 && (quantity>=0 && quantity<oldQuantity)){
+            updateProduct("quantity", oldQuantity-quantity, EAN);
+            return true;
+        }else {
+            return false;
+        }
     }
 
 

@@ -7,7 +7,9 @@ import pl.edu.wszib.magazyn.database.IDataBase;
 import pl.edu.wszib.magazyn.model.ProductInstance;
 
 import java.nio.charset.StandardCharsets;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 @Component
 public class GUI implements Igui {
@@ -31,10 +33,11 @@ public class GUI implements Igui {
         System.out.format("+-----------------+----------+---------------+%n");
     }
 
-    private int getQuantity(){
+    private int getQuantity() throws InputMismatchException{
         System.out.println("Quantity:");
-        return scanner.nextInt();
-
+        // stworzono nowy obiekt gdyż użycie zmiennej powodowało podwójne użycie
+        // wartości strumienia po obsłudze InputMismatchException
+        return  new Scanner(System.in).nextInt();
     }
 
     private String getEAN(){
@@ -43,15 +46,31 @@ public class GUI implements Igui {
     }
     
     private void increaseQuantity(){
-        //dodać obsługe błędów
-        //zły ean
-        //zła ilość
-        db.add(getEAN(),getQuantity());
+        try{
+            if (db.add(getEAN(),getQuantity())){
+                System.out.println("Successful compleated");
+            }else{
+                System.out.println("Wrong data");
+            }
+        }catch(InputMismatchException e){
+            System.out.println("Wrong data");
+        }
+        System.out.println();
     }
     
     private void reduceQuantity(){
-        //poniżej ilości produktów
-        db.remove(getEAN(),getQuantity());
+        try {
+            if (db.remove(getEAN(),getQuantity())){
+                System.out.println("Successful compleated");
+            }else{
+                System.out.println("Wrong data");
+            }
+        }catch (InputMismatchException e){
+            System.out.println("Wrong data");
+
+        }
+
+        System.out.println();
     }
 
     @Override
@@ -63,36 +82,26 @@ public class GUI implements Igui {
         System.out.println("4.EXIT");
 
 
-        String choose = scanner.nextLine();
-        //zignorowanie entera
-        // zapobiega podwójemu uchwyceniu entera po wpisaniu ilości
-        // wyświetlał się wrong number i 2x menu
-        while (choose==""){
-            choose=scanner.nextLine();
-        }
-
-        switch (choose){
+        switch (scanner.nextLine()){
             case "1":
                 this.showAllProducts();
-                this.showMainMenu();
                 break;
             case "2":
                 this.increaseQuantity();
-                this.showMainMenu();
                 break;
             case "3":
                 this.reduceQuantity();
-                this.showMainMenu();
                 break;
             case "4":
                 System.exit(0);
             case "":
-                this.showMainMenu();
+                break;
             default:
-
                 System.out.println("Wrong number");
-                this.showMainMenu();
         }
+
+
+        this.showMainMenu();
 
 
     }
