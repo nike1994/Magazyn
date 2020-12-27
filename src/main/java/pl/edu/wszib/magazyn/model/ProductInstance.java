@@ -1,20 +1,25 @@
 package pl.edu.wszib.magazyn.model;
 
-import io.jsondb.annotation.Document;
-import io.jsondb.annotation.Id;
-import io.jsondb.annotation.Secret;
 import org.springframework.stereotype.Component;
 
 @Component
-@Document(collection = "products", schemaVersion= "1.0")
 public class ProductInstance {
-    @Id
+
+    private  int id;
     private String EAN;
     private String name;
     private int quantity;
 
-    @Secret
-    private String privateKey;
+    public ProductInstance(int id, String ean, String name, int quantity) {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getEAN() {
         return EAN;
@@ -38,14 +43,6 @@ public class ProductInstance {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public String getPrivateKey() {
-        return privateKey;
-    }
-
-    public void setPrivateKey(String privateKey) {
-        this.privateKey = privateKey;
     }
 }
 
