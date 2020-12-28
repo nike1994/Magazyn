@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/commons.css">
+</head>
+<body>
+
+<div id="content">
+    <div th:if="${isLogged}">
+        <div th:replace="fragments/warehouseContent.html :: menu"></div>
+        <div th:replace="fragments/warehouseContent.html :: tableProduct"></div>
+    </div>
+    <div th:unless="${isLogged}">
+        <div th:replace = "fragments/loginForm.html :: form"></div>
+    </div>
+</div>
+</body>
+</html>

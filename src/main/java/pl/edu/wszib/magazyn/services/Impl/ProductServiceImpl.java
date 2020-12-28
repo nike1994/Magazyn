@@ -1,12 +1,14 @@
 package pl.edu.wszib.magazyn.services.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pl.edu.wszib.magazyn.dao.IProductDAO;
 import pl.edu.wszib.magazyn.model.ProductInstance;
 import pl.edu.wszib.magazyn.services.IProductService;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements IProductService {
     @Autowired
     IProductDAO productDAO;

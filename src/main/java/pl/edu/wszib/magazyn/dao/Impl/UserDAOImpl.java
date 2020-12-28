@@ -1,6 +1,7 @@
 package pl.edu.wszib.magazyn.dao.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import pl.edu.wszib.magazyn.dao.IUserDAO;
 import pl.edu.wszib.magazyn.model.User;
 
@@ -9,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Repository
 public class UserDAOImpl implements IUserDAO {
 
     @Autowired

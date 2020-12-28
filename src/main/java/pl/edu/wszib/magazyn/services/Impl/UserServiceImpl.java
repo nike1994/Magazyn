@@ -1,6 +1,7 @@
 package pl.edu.wszib.magazyn.services.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pl.edu.wszib.magazyn.dao.IUserDAO;
 import pl.edu.wszib.magazyn.model.User;
 import pl.edu.wszib.magazyn.services.IUserService;
@@ -8,6 +9,7 @@ import pl.edu.wszib.magazyn.session.SessionObj;
 
 import javax.annotation.Resource;
 
+@Service
 public class UserServiceImpl implements IUserService {
 
 

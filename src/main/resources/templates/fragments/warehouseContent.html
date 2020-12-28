@@ -1,0 +1,31 @@
+!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="menu" th:fragment="menu">
+
+</div>
+
+<div class="table" th:fragment="tableProducts">
+    <div class="row" th:each="product : ${products}">
+        <div th:text="${product.name}" class="name-box"></div>
+        <div th:text = "${product.quantity}" class="quantity"></div>
+        <div><img th:src="@{'data:image/jpeg;base64'+${product.EAN.generateBase64Image()}}" alt="" class="eanImage"></div>
+        <div class="checkbox">
+            <input type="checkbox" th:name="${product.id}">
+        </div>
+        <div class="edit">
+            <a th:href="@{/editProduct/{id}(id=${product.id})}" class="button"></a>
+        </div>
+    </div>
+</div>
+
+
+
+<img src="/logo.png" id="logo" th:fragment="logo">
+</body>
+</html>

@@ -1,0 +1,17 @@
+!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" id="login-form" th:fragment="form">
+    <input type="text" placeholder="Login" th:field="*{userModel.login}">
+    <input type="password" placeholder="Hasło" th:field="*{userModel.pass}">
+    <input type="submit" value="Zaloguj">
+</form>
+
+<img src="/logo.png" id="logo" th:fragment="logo">
+</body>
+</html>

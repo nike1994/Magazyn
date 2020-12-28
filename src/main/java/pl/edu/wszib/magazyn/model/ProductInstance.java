@@ -1,8 +1,5 @@
 package pl.edu.wszib.magazyn.model;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class ProductInstance {
 
     private  int id;
@@ -11,6 +8,10 @@ public class ProductInstance {
     private int quantity;
 
     public ProductInstance(int id, String ean, String name, int quantity) {
+        this.id = id;
+        this.EAN = ean;
+        this.name = name;
+        this.quantity = quantity;
     }
 
     public int getId() {
