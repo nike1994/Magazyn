@@ -5,12 +5,18 @@
     <title>Title</title>
 </head>
 <body>
+<th:block th:fragment="form">
+    <form method="post" action="/login" id="login-form" >
+        <input type="text" placeholder="Login" th:field="*{userModel.login}">
+        <input type="password" placeholder="Hasło" th:field="*{userModel.pass}">
+        <input type="submit" value="Zaloguj">
+    </form>
+    <script>
+        // skrypt validacyjny formularz logowania
+    </script>
+</th:block>
 
-<form method="post" id="login-form" th:fragment="form">
-    <input type="text" placeholder="Login" th:field="*{userModel.login}">
-    <input type="password" placeholder="Hasło" th:field="*{userModel.pass}">
-    <input type="submit" value="Zaloguj">
-</form>
+
 
 <img src="/logo.png" id="logo" th:fragment="logo">
 </body>

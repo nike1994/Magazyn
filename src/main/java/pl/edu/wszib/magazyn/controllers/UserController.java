@@ -20,27 +20,15 @@ public class UserController {
     @Resource
     SessionObj sessionObject;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginForm(Model model) {
-        if(this.sessionObject.isLogged()) {
-            return "redirect:/main";
-        }
-        model.addAttribute("userModel", new User());
-        return "login";
-    }
-
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute User user) {
         this.userService.authenticate(user);
-        if(this.sessionObject.isLogged()) {
-            return "redirect:/main";
-        }
-        return "redirect:/login";
+        return "redirect:/main";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout() {
         this.userService.logout();
-        return "redirect:/login";
+        return "redirect:/main";
     }
 }

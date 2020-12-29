@@ -8,8 +8,8 @@ public interface IProductService {
     ProductInstance getProductById(int id);
     List<ProductInstance> getAllProducts();
     void updateProduct(ProductInstance product);
-    void increaseQuantity(ProductInstance product);
-    void reduceQuantity(ProductInstance product);
+    void increaseQuantity(int id, int quantity);
+    void reduceQuantity(int id, int quantity);
     void insertProduct(ProductInstance product);
     void removeProduct(int id);
 

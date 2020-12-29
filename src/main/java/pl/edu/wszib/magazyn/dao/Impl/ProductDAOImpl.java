@@ -32,7 +32,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public boolean updateQuantity(int quantity, int id){
-        String sql = "UPDATE PRODUCT SET quantity= ? WHERE id = ?";
+        String sql = "UPDATE product SET quantity= ? WHERE id = ?";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setObject(1,quantity);
@@ -46,7 +46,7 @@ public class ProductDAOImpl implements IProductDAO {
     }
     @Override
     public boolean updateProduct(ProductInstance product) {
-        String sql = "UPDATE PRODUCT SET EAN= ?, name =? , quantity = ? WHERE id = ?";
+        String sql = "UPDATE product SET EAN= ?, name =? , quantity = ? WHERE id = ?";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1, product.getEAN());
@@ -63,7 +63,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public boolean removeProduct(int id) {
-        String sql = "DELETE FROM PRODUCT WHERE ID=?";
+        String sql = "DELETE FROM product WHERE id=?";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setInt(1,id);
@@ -78,14 +78,13 @@ public class ProductDAOImpl implements IProductDAO {
 
 
     @Override
-    public boolean insertProduct(String EAN, String name, int quantity){
-        // TODO 27.12.2020 zmiana na pobieranie obiektu Productinstance jako argumentu
-        String sql = "INSERT INTO PRODUCT (EAN,NAME,QUANTITY) VALUES(?,?,?);";
+    public boolean insertProduct(ProductInstance product){
+        String sql = "INSERT INTO product (EAN,name,quantity) VALUES(?,?,?);";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
-            preparedStatement.setString(1,EAN);
-            preparedStatement.setString(2,name);
-            preparedStatement.setInt(3,quantity);
+            preparedStatement.setString(1,product.getEAN());
+            preparedStatement.setString(2,product.getName());
+            preparedStatement.setInt(3,product.getQuantity());
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException throwables) {
@@ -99,7 +98,7 @@ public class ProductDAOImpl implements IProductDAO {
     public List<ProductInstance> getAll() {
         List<ProductInstance> ProductInstanceCollection = new ArrayList<>();
         try{
-            String sql = "SELECT * FORM PRODUCT;";
+            String sql = "SELECT * FROM product";
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -114,7 +113,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public ProductInstance getProductByID(int id) {
-        String sql= "SELECT * FROM PRODUCT WHERE id = ?";
+        String sql= "SELECT * FROM product WHERE id = ?;";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);

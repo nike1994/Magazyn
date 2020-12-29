@@ -6,23 +6,58 @@
 </head>
 <body>
 
-<div class="menu" th:fragment="menu">
-
-</div>
-
-<div class="table" th:fragment="tableProducts">
-    <div class="row" th:each="product : ${products}">
-        <div th:text="${product.name}" class="name-box"></div>
-        <div th:text = "${product.quantity}" class="quantity"></div>
-        <div><img th:src="@{'data:image/jpeg;base64'+${product.EAN.generateBase64Image()}}" alt="" class="eanImage"></div>
-        <div class="checkbox">
-            <input type="checkbox" th:name="${product.id}">
+<nav class="menu" th:fragment="menu">
+    <ol>
+        <li class="menu-item logout">
+            <a href="/logout">Wyloguj</a>
+        </li>
+        <li class="menu-item">
+            <a id="delete" onclick="deleteProduct()">Usuń produkt</a>
+        </li>
+        <li class="menu-item">
+            <a href="/addProduct" id="add" >Dodaj nowy produkt</a>
+        </li>
+        <li class="menu-item">
+            <a id="increase" onclick="increaseQuantity()">Zwiększ ilość</a>
+        </li>
+        <li class="menu-item">
+            <a id="reduce" onclick="reduceQuantity()">Zmniejsz ilość</a>
+        </li>
+    </ol>
+    <div class="transparent editBox" id="editBox">
+        <input type="number" placeholder="o ile ma być zmieniona wartość">
+        <div class="button">
+            <a id="change">Zmień</a>
         </div>
-        <div class="edit">
-            <a th:href="@{/editProduct/{id}(id=${product.id})}" class="button"></a>
+    </div>
+</nav>
+
+<div class="tableContainer" th:fragment="tableProducts">
+    <div class="table" >
+        <div class="tableHeader">
+            <div class="name-box">Nazwa</div>
+            <div class="quantity-box">Ilość</div>
+            <div class="ean-box">Ean</div>
+            <div class="checkbox">X</div>
+        </div>
+        <div class="row" th:each="product : ${products}">
+            <div th:text="${product.name}" class="name-box">
+
+            </div>
+            <div th:text = "${product.quantity}" class="quantity-box">
+
+            </div>
+            <div class="ean-box">
+                <img th:src="'data:image/png;base64,'+${product.getEANBase64()}" alt="" class="eanImage">
+                <p th:text = "${product.EAN}"></p>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" th:name="${product.id}">
+            </div>
         </div>
     </div>
 </div>
+
 
 
 

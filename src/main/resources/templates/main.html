@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Magazyn</title>
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/commons.css">
+    <th:block  th:if="${isLogged}">
+        <link rel="stylesheet" href="/warehouseContent.css">
+    </th:block>
+    <th:block th:unless="${isLogged}">
+        <link rel="stylesheet" href="/login.css">
+    </th:block>
+
 </head>
 <body>
 
 <div id="content">
-    <div th:if="${isLogged}">
+    <div class="contentWarehouse" th:if="${isLogged}">
         <div th:replace="fragments/warehouseContent.html :: menu"></div>
-        <div th:replace="fragments/warehouseContent.html :: tableProduct"></div>
+        <div th:replace="fragments/warehouseContent.html :: tableProducts"></div>
+        <script src="/index.js"></script>
     </div>
-    <div th:unless="${isLogged}">
+    <div class="login" th:unless="${isLogged}">
+        <h1>Logowanie</h1>
         <div th:replace = "fragments/loginForm.html :: form"></div>
     </div>
 </div>

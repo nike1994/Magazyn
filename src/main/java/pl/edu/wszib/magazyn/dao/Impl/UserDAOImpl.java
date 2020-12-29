@@ -18,7 +18,7 @@ public class UserDAOImpl implements IUserDAO {
 
     @Override
     public User getUserByLogin(String login) {
-        String sql = "SELECT * FROM USERS WHERE login = ?";
+        String sql = "SELECT * FROM users WHERE login = ?";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1,login);
