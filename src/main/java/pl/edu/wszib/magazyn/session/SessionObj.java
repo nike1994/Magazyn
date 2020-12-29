@@ -8,9 +8,18 @@ import pl.edu.wszib.magazyn.model.User;
 @SessionScope
 public class SessionObj {
     private User loggedUser = null;
+    private String info =null;
 
     public User getLoggedUser() {
         return loggedUser;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public void setLoggedUser(User loggedUser) {

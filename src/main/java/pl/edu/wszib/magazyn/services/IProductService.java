@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface IProductService {
     ProductInstance getProductById(int id);
+    ProductInstance getProductByEAN(String EAN);
     List<ProductInstance> getAllProducts();
-    void updateProduct(ProductInstance product);
+    //void updateProduct(ProductInstance product);
     void increaseQuantity(int id, int quantity);
     void reduceQuantity(int id, int quantity);
     void insertProduct(ProductInstance product);

@@ -27,32 +27,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="Spring controllers">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_barbecue_barbecue_1_5_beta1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/addProduct.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/addProductValidate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/warehouseContent.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Magazyn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Magazyn.iml" afterDir="false" />
+    <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="front-end i controlery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/IProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/IProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/ProductInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/ProductInstance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/IProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/commons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/commons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/loginForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/loginForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/warehouseContent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/warehouseContent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/model/ProductInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/model/ProductInstance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/session/SessionObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/session/SessionObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609185171360</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="front-end i controlery">
+      <created>1609281024746</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609281024746</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +224,8 @@
     <MESSAGE value="add createProduct" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="Spring controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring controllers" />
+    <MESSAGE value="front-end i controlery" />
+    <option name="LAST_COMMIT_MESSAGE" value="front-end i controlery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

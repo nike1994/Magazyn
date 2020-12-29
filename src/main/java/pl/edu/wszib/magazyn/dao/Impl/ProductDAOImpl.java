@@ -128,4 +128,24 @@ public class ProductDAOImpl implements IProductDAO {
         }
         return null;
     }
+
+    @Override
+    public ProductInstance getProductByEAN(String EAN) {
+        String sql= "SELECT * FROM product WHERE EAN LIKE ?;";
+        try{
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setString(1, EAN);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()) {
+                return createProductInstance(resultSet);
+            }
+        }catch(SQLException throwables){
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

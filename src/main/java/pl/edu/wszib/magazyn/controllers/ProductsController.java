@@ -17,6 +17,8 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Controller
 @Validated
@@ -29,8 +31,7 @@ public class ProductsController {
 
     ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
 
-    // TODO: 27.12.2020 (dodawanie, zmiana, usuwanie, wyświetlenie wszystkich)
-    // TODO: 28.12.2020 walidacja danych oraz sprawdzanie czy używa ich użytkownik zalogowany
+    // TODO: 28.12.2020 walidacja danych
 
 //    @RequestMapping(value = "/getProductByID", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = "application/json")
 //    @ResponseBody
@@ -86,7 +87,11 @@ public class ProductsController {
         ArrayList<Integer> IDs = (ArrayList<Integer>) JSON.get("id");
 
         for (int id : IDs) {
-            this.productService.increaseQuantity(id,(Integer) JSON.get("quantity"));
+            if((Integer)JSON.get("quantity") > 0){
+                this.productService.increaseQuantity(id,(Integer) JSON.get("quantity"));
+            }else{
+                return "znaleziono błędną wartość. Nie udało się wszystkich produktów zmienić";
+            }
         }
 
         return "ok";
@@ -100,7 +105,17 @@ public class ProductsController {
         ArrayList<Integer> IDs = (ArrayList<Integer>) JSON.get("id");
 
         for (int id : IDs) {
-            this.productService.reduceQuantity(id,(Integer) JSON.get("quantity"));
+            if((Integer)JSON.get("quantity") < 0){
+                ProductInstance productFromDB = this.productService.getProductById(id);
+                if(productFromDB.getQuantity()>(Integer)JSON.get("quantity")){
+                    this.productService.reduceQuantity(id,(Integer) JSON.get("quantity"));
+                }else{
+                    return "znaleziono błędną wartość. Nie udało się wszystkich produktów zmienić";
+                }
+            }else{
+                return "znaleziono błędną wartość. Nie udało się wszystkich produktów zmienić";
+            }
+
         }
 
         return "ok";
@@ -112,13 +127,34 @@ public class ProductsController {
             return "redirect:/main";
         }
         model.addAttribute("productModel", new ProductInstance());
+        model.addAttribute("info", this.sessionObject.getInfo());
         return "addProduct";
     }
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     public String addProductSite(@ModelAttribute ProductInstance product) {
-        this.productService.insertProduct(product);
-        return "redirect:/main";
+
+        Pattern regexpName = Pattern.compile("[A-Za-z0-9]+");
+        Pattern regexpEAN = Pattern.compile("[0-9]{12}");
+
+        Matcher NameMatcher = regexpName.matcher(product.getName());
+        Matcher EANMatcher = regexpEAN.matcher(product.getEAN());
+
+
+        if(NameMatcher.matches() && EANMatcher.matches()) {
+            ProductInstance productFromDB = this.productService.getProductByEAN(product.getEAN());
+            if(productFromDB==null){
+                this.productService.insertProduct(product);
+                this.sessionObject.setInfo(null);
+            }else{
+                this.sessionObject.setInfo("validation error !!");
+            }
+
+        }else{
+            this.sessionObject.setInfo("validation error !!");
+        }
+
+        return "redirect:/addProduct";
     }
 
 

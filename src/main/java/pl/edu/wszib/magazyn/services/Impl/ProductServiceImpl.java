@@ -33,6 +33,12 @@ public class ProductServiceImpl implements IProductService {
 
         return product;
     }
+    @Override
+    public ProductInstance getProductByEAN(String EAN) {
+        ProductInstance product = this.productDAO.getProductByEAN(EAN);
+
+        return product;
+    }
 
     @Override
     public List<ProductInstance> getAllProducts() {
@@ -40,40 +46,37 @@ public class ProductServiceImpl implements IProductService {
         return products;
     }
 
-    @Override
-    public void updateProduct(ProductInstance product) {
-        ProductInstance productFromDB = this.productDAO.getProductByID(product.getId());
-        // TODO: 27.12.2020 czy wartości są poprawne
-        productFromDB.setEAN(product.getEAN());
-        productFromDB.setName(product.getName());
-        productFromDB.setQuantity(product.getQuantity());
-        this.productDAO.updateProduct(product);
-    }
+//    @Override
+//    public void updateProduct(ProductInstance product) {
+//        ProductInstance productFromDB = this.productDAO.getProductByID(product.getId());
+//
+//        productFromDB.setEAN(product.getEAN());
+//        productFromDB.setName(product.getName());
+//        productFromDB.setQuantity(product.getQuantity());
+//        this.productDAO.updateProduct(product);
+//    }
 
     @Override
     public void increaseQuantity(int id, int quantity) {
-        // TODO: 27.12.2020 czy ilość nie jest ujemna
         ProductInstance productFromDB = this.productDAO.getProductByID(id);
         this.productDAO.updateQuantity(productFromDB.getQuantity()+quantity,id);
     }
 
     @Override
     public void reduceQuantity(int id, int quantity) {
-        // TODO: 27.12.2020 czy ilość jest mniejsza od starej i czy nie jest ujemna
         ProductInstance productFromDB = this.productDAO.getProductByID(id);
         this.productDAO.updateQuantity(productFromDB.getQuantity()-quantity,id);
     }
 
     @Override
     public void insertProduct(ProductInstance product) {
-        // TODO: 27.12.2020 sprawdzenie poprawności danych
         // TODO: 29.12.2020 sprawdzenie czy produkt o takim EAN istnieje 
         this.productDAO.insertProduct(product);
     }
 
     @Override
     public void removeProduct(int id) {
-        // TODO: 27.12.2020 sprawdzenie czy istnieje produkt o takim id
         this.productDAO.removeProduct(id);
     }
+
 }

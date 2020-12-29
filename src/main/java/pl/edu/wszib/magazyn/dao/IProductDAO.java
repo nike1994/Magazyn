@@ -12,4 +12,5 @@ public interface IProductDAO {
     boolean updateProduct(ProductInstance productInstance);
     List<ProductInstance> getAll();
     ProductInstance getProductByID(int id);
+    ProductInstance getProductByEAN(String EAN);
 }
