@@ -70,7 +70,6 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void insertProduct(ProductInstance product) {
-        // TODO: 29.12.2020 sprawdzenie czy produkt o takim EAN istnieje 
         this.productDAO.insertProduct(product);
     }
 

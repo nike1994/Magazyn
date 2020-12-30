@@ -20,7 +20,6 @@ public class CommonController {
     @Resource
     SessionObj sessionObject;
 
-// TODO: 28.12.2020 stworzenie barcode za pomocą barbecue
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String landingPage() {

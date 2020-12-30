@@ -76,5 +76,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.barbecue:barbecue:1.5-beta1" level="project" />
+    <orderEntry type="library" name="Maven: org.hsqldb:sqltool:2.4.1" level="project" />
   </component>
 </module>

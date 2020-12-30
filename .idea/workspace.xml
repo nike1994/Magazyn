@@ -28,14 +28,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="front-end i controlery">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hsqldb_sqltool_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/DBfill.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Magazyn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Magazyn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/IProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/IProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/IProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/session/SessionObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/session/SessionObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +90,7 @@
       <recent name="pl.edu.wszib.magazyn.services.Impl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wiki1\IdeaProjects\Magazyn\src\main\resources" />
       <recent name="C:\Users\wiki1\IdeaProjects\Magazyn\src\main\resources\templates\fragments" />
     </key>
   </component>
@@ -202,6 +204,7 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -238,12 +241,19 @@
           <properties class="java.sql.SQLSyntaxErrorException" package="java.sql" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/configuration/AppConfiguration.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="this.loggedUser != null" />
         <watch expression="loggedUser" language="JAVA" />
+        <watch expression="this.type" custom="org.springframework.cglib.reflect.FastClass" />
+        <watch expression="this" />
       </configuration>
       <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/session/SessionObj.java" line="9">
         <watch expression="loggedUser" />

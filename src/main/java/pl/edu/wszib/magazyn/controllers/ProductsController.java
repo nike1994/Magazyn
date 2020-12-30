@@ -31,7 +31,6 @@ public class ProductsController {
 
     ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
 
-    // TODO: 28.12.2020 walidacja danych
 
 //    @RequestMapping(value = "/getProductByID", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = "application/json")
 //    @ResponseBody
