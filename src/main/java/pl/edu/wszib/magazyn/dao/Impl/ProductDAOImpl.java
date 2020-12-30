@@ -44,22 +44,7 @@ public class ProductDAOImpl implements IProductDAO {
         }
         return false;
     }
-    @Override
-    public boolean updateProduct(ProductInstance product) {
-        String sql = "UPDATE product SET EAN= ?, name =? , quantity = ? WHERE id = ?";
-        try{
-            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
-            preparedStatement.setString(1, product.getEAN());
-            preparedStatement.setString(2,product.getName());
-            preparedStatement.setInt(3,product.getQuantity());
-            preparedStatement.setInt(4,product.getId());
-            preparedStatement.executeUpdate();
-            return true;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return false;
-    }
+
 
     @Override
     public boolean removeProduct(int id) {

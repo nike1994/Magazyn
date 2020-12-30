@@ -46,15 +46,6 @@ public class ProductServiceImpl implements IProductService {
         return products;
     }
 
-//    @Override
-//    public void updateProduct(ProductInstance product) {
-//        ProductInstance productFromDB = this.productDAO.getProductByID(product.getId());
-//
-//        productFromDB.setEAN(product.getEAN());
-//        productFromDB.setName(product.getName());
-//        productFromDB.setQuantity(product.getQuantity());
-//        this.productDAO.updateProduct(product);
-//    }
 
     @Override
     public void increaseQuantity(int id, int quantity) {

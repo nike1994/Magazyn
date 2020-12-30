@@ -49,22 +49,6 @@ public class ProductsController {
 //    }
 
 
-//    @RequestMapping(value = "/getProductByID/{id}", method = RequestMethod.GET)
-//    @ResponseBody
-//    public String getProductByID(@PathVariable int id){
-//
-//        ProductInstance response = this.productService.getProductById(id);
-//
-//        try {
-//            return this.objectWriter.writeValueAsString(response);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return "error";
-//        }
-//    }
-
-
-
     @RequestMapping(value = "/removeProducts", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public String removeProductsJSON(@RequestBody LinkedHashMap JSON){

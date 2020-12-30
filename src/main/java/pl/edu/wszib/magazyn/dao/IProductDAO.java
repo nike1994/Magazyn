@@ -9,7 +9,6 @@ public interface IProductDAO {
     boolean insertProduct(ProductInstance productInstance);
     boolean removeProduct(int id);
     boolean updateQuantity(int id, int quantity);
-    boolean updateProduct(ProductInstance productInstance);
     List<ProductInstance> getAll();
     ProductInstance getProductByID(int id);
     ProductInstance getProductByEAN(String EAN);
