@@ -1,5 +1,6 @@
 package pl.edu.wszib.magazyn.configuration;
 
+import org.hibernate.SessionFactory;
 import org.hsqldb.cmdline.SqlFile;
 import org.hsqldb.cmdline.SqlToolError;
 import org.springframework.context.annotation.Bean;
@@ -15,12 +16,12 @@ import java.sql.*;
 
 public class AppConfiguration {
 
-    @Bean
+   /* @Bean
     public Connection connection() {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost", "root", "");
             String DBname = "Magazyn";
 
             if(!checkDatabaseExist(DBname, connection)){
@@ -40,6 +41,11 @@ public class AppConfiguration {
         }
 
         return null;
+    }*/
+
+    @Bean
+    public SessionFactory sessionFactory(){
+        return new org.hibernate.cfg.Configuration().configure().buildSessionFactory();
     }
 
     public void DBfill(Connection connection){

@@ -27,16 +27,24 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="front-end i controlery">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hsqldb_sqltool_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DBfill.sql" afterDir="false" />
+    <list default="true" id="db4abffc-2578-4e2d-b568-d0c1ff562bc8" name="Default Changelist" comment="end">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/ProductHibernateDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/UserHibernateDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Magazyn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Magazyn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_26_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_27_Final.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/configuration/AppConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/IProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/IProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/ProductDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/dao/Impl/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/ProductInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/ProductInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/services/Impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DBfill.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DBfill.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/model/ProductInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/model/ProductInstance.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +59,8 @@
       <list>
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -196,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609281024746</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="skrypt db">
+      <created>1609342205967</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609342205967</updated>
+    </task>
+    <task id="LOCAL-00011" summary="end">
+      <created>1609342496940</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609342496940</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +250,9 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="Spring controllers" />
     <MESSAGE value="front-end i controlery" />
-    <option name="LAST_COMMIT_MESSAGE" value="front-end i controlery" />
+    <MESSAGE value="skrypt db" />
+    <MESSAGE value="end" />
+    <option name="LAST_COMMIT_MESSAGE" value="end" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -243,7 +267,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/configuration/AppConfiguration.java</url>
-          <line>69</line>
+          <line>72</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

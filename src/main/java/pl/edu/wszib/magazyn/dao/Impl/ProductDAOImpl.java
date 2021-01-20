@@ -12,13 +12,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class ProductDAOImpl implements IProductDAO {
+
+public class ProductDAOImpl /*implements IProductDAO*/ {
 
     @Autowired
     Connection connection;
 
-    private ProductInstance createProductInstance( ResultSet result){
+  /*  private ProductInstance createProductInstance( ResultSet result){
         try {
             return new ProductInstance(result.getInt("id"),
                     result.getString("EAN"),
@@ -30,9 +30,9 @@ public class ProductDAOImpl implements IProductDAO {
         return null;
     }
 
-    @Override
+    //@Override
     public boolean updateQuantity(int quantity, int id){
-        String sql = "UPDATE product SET quantity= ? WHERE id = ?";
+        String sql = "UPDATE products SET quantity= ? WHERE id = ?";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setObject(1,quantity);
@@ -48,7 +48,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public boolean removeProduct(int id) {
-        String sql = "DELETE FROM product WHERE id=?";
+        String sql = "DELETE FROM products WHERE id=?";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setInt(1,id);
@@ -64,7 +64,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public boolean insertProduct(ProductInstance product){
-        String sql = "INSERT INTO product (EAN,name,quantity) VALUES(?,?,?);";
+        String sql = "INSERT INTO products (EAN,name,quantity) VALUES(?,?,?);";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1,product.getEAN());
@@ -83,7 +83,7 @@ public class ProductDAOImpl implements IProductDAO {
     public List<ProductInstance> getAll() {
         List<ProductInstance> ProductInstanceCollection = new ArrayList<>();
         try{
-            String sql = "SELECT * FROM product";
+            String sql = "SELECT * FROM products";
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -98,7 +98,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public ProductInstance getProductByID(int id) {
-        String sql= "SELECT * FROM product WHERE id = ?;";
+        String sql= "SELECT * FROM products WHERE id = ?;";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
@@ -116,7 +116,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public ProductInstance getProductByEAN(String EAN) {
-        String sql= "SELECT * FROM product WHERE EAN LIKE ?;";
+        String sql= "SELECT * FROM products WHERE EAN LIKE ?;";
         try{
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1, EAN);
@@ -132,5 +132,5 @@ public class ProductDAOImpl implements IProductDAO {
         return null;
     }
 
-
+*/
 }

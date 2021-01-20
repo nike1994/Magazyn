@@ -7,13 +7,20 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 import net.sourceforge.barbecue.output.OutputException;
 
 import javax.imageio.ImageIO;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Base64;
 
+@Entity(name="products")
 public class ProductInstance {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
     private String EAN;
     private String name;

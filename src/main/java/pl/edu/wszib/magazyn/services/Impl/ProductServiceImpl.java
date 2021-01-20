@@ -9,6 +9,7 @@ import net.sourceforge.barbecue.output.OutputException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.magazyn.dao.IProductDAO;
+import pl.edu.wszib.magazyn.dao.Impl.ProductHibernateDaoImpl;
 import pl.edu.wszib.magazyn.model.ProductInstance;
 import pl.edu.wszib.magazyn.services.IProductService;
 
@@ -49,14 +50,16 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void increaseQuantity(int id, int quantity) {
-        ProductInstance productFromDB = this.productDAO.getProductByID(id);
-        this.productDAO.updateQuantity(productFromDB.getQuantity()+quantity,id);
+        //ProductInstance productFromDB = this.productDAO.getProductByID(id);
+        //this.productDAO.updateQuantity(productFromDB.getQuantity()+quantity,id);
+        this.productDAO.increaseQuantity( id,  quantity);
     }
 
     @Override
     public void reduceQuantity(int id, int quantity) {
-        ProductInstance productFromDB = this.productDAO.getProductByID(id);
-        this.productDAO.updateQuantity(productFromDB.getQuantity()-quantity,id);
+        //ProductInstance productFromDB = this.productDAO.getProductByID(id);
+        //this.productDAO.updateQuantity(productFromDB.getQuantity()-quantity,id);
+        this.productDAO.increaseQuantity( id,  quantity);
     }
 
     @Override

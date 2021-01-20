@@ -88,14 +88,18 @@ public class ProductsController {
         ArrayList<Integer> IDs = (ArrayList<Integer>) JSON.get("id");
 
         for (int id : IDs) {
-            if((Integer)JSON.get("quantity") < 0){
+            System.out.println(JSON.get("quantity"));
+            if((Integer)JSON.get("quantity") > 0){
+                System.out.println(id);
                 ProductInstance productFromDB = this.productService.getProductById(id);
                 if(productFromDB.getQuantity()>(Integer)JSON.get("quantity")){
                     this.productService.reduceQuantity(id,(Integer) JSON.get("quantity"));
                 }else{
+                    System.out.println(1);
                     return "znaleziono błędną wartość. Nie udało się wszystkich produktów zmienić";
                 }
             }else{
+                System.out.println(2);
                 return "znaleziono błędną wartość. Nie udało się wszystkich produktów zmienić";
             }
 
