@@ -1,24 +1,11 @@
 package pl.edu.wszib.magazyn.services.Impl;
 
-import net.sourceforge.barbecue.Barcode;
-import net.sourceforge.barbecue.BarcodeException;
-import net.sourceforge.barbecue.BarcodeFactory;
-import net.sourceforge.barbecue.BarcodeImageHandler;
-import net.sourceforge.barbecue.formatter.BarcodeFormatter;
-import net.sourceforge.barbecue.output.OutputException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.magazyn.dao.IProductDAO;
-import pl.edu.wszib.magazyn.dao.Impl.ProductHibernateDaoImpl;
 import pl.edu.wszib.magazyn.model.ProductInstance;
 import pl.edu.wszib.magazyn.services.IProductService;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -50,16 +37,12 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void increaseQuantity(int id, int quantity) {
-        //ProductInstance productFromDB = this.productDAO.getProductByID(id);
-        //this.productDAO.updateQuantity(productFromDB.getQuantity()+quantity,id);
         this.productDAO.increaseQuantity( id,  quantity);
     }
 
     @Override
     public void reduceQuantity(int id, int quantity) {
-        //ProductInstance productFromDB = this.productDAO.getProductByID(id);
-        //this.productDAO.updateQuantity(productFromDB.getQuantity()-quantity,id);
-        this.productDAO.increaseQuantity( id,  quantity);
+        this.productDAO.reduceQuantity( id,  quantity);
     }
 
     @Override

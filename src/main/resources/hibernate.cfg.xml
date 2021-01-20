@@ -23,7 +23,8 @@
         </property>
 
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
+        <!-- tylko tryp create i create-drop pozwala na użycie import.sql do wypełnienia bazy danych -->
 
         <!-- List of XML mapping files -->
         <mapping class = "pl.edu.wszib.magazyn.model.User"/>

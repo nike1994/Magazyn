@@ -64,7 +64,6 @@ public class ProductHibernateDaoImpl implements IProductDAO {
 
     @Override
     public void increaseQuantity(int id, int quantity) {
-        System.out.println("id = " + id + ", quantity = " + quantity);
         Session session = this.sessionFactory.openSession();
         Transaction tx = null;
         try {
@@ -74,7 +73,6 @@ public class ProductHibernateDaoImpl implements IProductDAO {
                     .setParameter("increaseVal", quantity)
                     .setParameter("id",id)
                     .executeUpdate();
-            System.out.println("query");
             tx.commit();
         }catch (Exception e){
             if(tx != null){
@@ -128,17 +126,26 @@ public class ProductHibernateDaoImpl implements IProductDAO {
 
     @Override
     public void removeProduct(int id) {
+        System.out.println("delete");
         Session session = this.sessionFactory.openSession();
+        Transaction tx = null;
         ProductInstance product = session.load(ProductInstance.class,id);
+
         if(product != null){
-            session.delete(product);
+            try{
+                tx = session.beginTransaction();
+                session.delete(product);
+                tx.commit();
+            }catch (Exception e){
+                if(tx != null){
+                    tx.rollback();
+                }
+            }finally {
+                session.close();
+            }
+
         }
         session.close();
     }
-
-//    @Override
-//    public boolean updateQuantity(int id, int quantity) {
-//        return false;
-//    }
 
 }

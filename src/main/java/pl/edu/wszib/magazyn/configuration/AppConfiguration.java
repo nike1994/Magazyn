@@ -16,60 +16,26 @@ import java.sql.*;
 
 public class AppConfiguration {
 
-   /* @Bean
-    public Connection connection() {
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost", "root", "");
-            String DBname = "Magazyn";
-
-            if(!checkDatabaseExist(DBname, connection)){
-                createDB(DBname,connection);
-                connection.setCatalog(DBname);
-                DBfill(connection);
-            };
-            connection.setCatalog(DBname);
-
-
-            return connection;
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
-        return null;
-    }*/
-
     @Bean
     public SessionFactory sessionFactory(){
+        createDBifExist();
         return new org.hibernate.cfg.Configuration().configure().buildSessionFactory();
     }
 
-    public void DBfill(Connection connection){
-        SqlFile sqlFile = null;
-        try {
-            sqlFile = new SqlFile(new File(System.getProperty("user.dir")+"/src/main/resources/DBfill.sql"));
-            sqlFile.setConnection(connection);
-            sqlFile.execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SqlToolError sqlToolError) {
-            sqlToolError.printStackTrace();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
 
-    public void createDB(String name, Connection connection){
+    public void createDBifExist(){
         try{
-            String sql = "CREATE DATABASE IF NOT EXISTS "+name+" ;";
-            Statement statement = connection.createStatement();
-            statement.executeUpdate(sql);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost", "root", "");
+            String DBname = "Magazyn";
+            if(!(checkDatabaseExist(DBname,connection))){
+                String sql = "CREATE DATABASE IF NOT EXISTS "+DBname+" ;";
+                Statement statement = connection.createStatement();
+                statement.executeUpdate(sql);
+            }
 
-        } catch (SQLException throwables) {
+
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
 

@@ -3,18 +3,15 @@ package pl.edu.wszib.magazyn.controllers;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectWriter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.edu.wszib.magazyn.model.ProductInstance;
-import pl.edu.wszib.magazyn.model.User;
 import pl.edu.wszib.magazyn.services.IProductService;
 import pl.edu.wszib.magazyn.session.SessionObj;
 
 import javax.annotation.Resource;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.regex.Matcher;
@@ -30,23 +27,6 @@ public class ProductsController {
     SessionObj sessionObject;
 
     ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
-
-
-//    @RequestMapping(value = "/getProductByID", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = "application/json")
-//    @ResponseBody
-//    public String getProductByIDJSON(@RequestBody LinkedHashMap JSON){
-//
-//        System.out.println("id = " + JSON.get("id"));
-//
-//        ProductInstance response = this.productService.getProductById((Integer) JSON.get("id"));
-//
-//        try {
-//            return this.objectWriter.writeValueAsString(response);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return "error";
-//        }
-//    }
 
 
     @RequestMapping(value = "/removeProducts", method = RequestMethod.POST, consumes = "application/json")
@@ -88,18 +68,14 @@ public class ProductsController {
         ArrayList<Integer> IDs = (ArrayList<Integer>) JSON.get("id");
 
         for (int id : IDs) {
-            System.out.println(JSON.get("quantity"));
             if((Integer)JSON.get("quantity") > 0){
-                System.out.println(id);
                 ProductInstance productFromDB = this.productService.getProductById(id);
-                if(productFromDB.getQuantity()>(Integer)JSON.get("quantity")){
+                if(productFromDB.getQuantity()>=(Integer)JSON.get("quantity")){
                     this.productService.reduceQuantity(id,(Integer) JSON.get("quantity"));
                 }else{
-                    System.out.println(1);
                     return "znaleziono błędną wartość. Nie udało się wszystkich produktów zmienić";
                 }
             }else{
-                System.out.println(2);
                 return "znaleziono błędną wartość. Nie udało się wszystkich produktów zmienić";
             }
 
